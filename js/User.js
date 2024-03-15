@@ -7,5 +7,6 @@ class User {
       id: Date.now(),
       ...userData,
     };
+    console.log(userData);
   }
 }

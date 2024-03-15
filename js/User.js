@@ -16,7 +16,11 @@ class User {
     this.users.push(newUser);
     localStorage.setItem("users", JSON.stringify(this.users));
 
-    return (window.location.href = "../signin.html");
+    // return (window.location.href = "../signin.html");
+
+    return {
+      success: true,
+    };
   }
 
   getUsers() {

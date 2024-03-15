@@ -1,4 +1,5 @@
 //file ini untuk penghubung antara UI HTML dan model User
+//semacam controller
 
 document.addEventListener("DOMContentLoaded", () => {
   const userForm = document.getElementById("userForm");
@@ -13,5 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     userManager.saveUser(userData);
+
+    const result = userManager.saveUser(userData);
+
+    if (result.success) {
+      return (window.location.href = "../signin.html");
+    } else {
+      console.log("Proses Simpan Data Gagal!");
+    }
   });
 });

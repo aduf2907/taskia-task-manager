@@ -23,6 +23,26 @@ class User {
     };
   }
 
+  signInUser(usernameByInput) {
+    //proses pemeriksaan data username pada localStorage
+    const userExists = this.users.some(
+      (user) => user.username.toLowerCase() === usernameByInput.toLowerCase()
+    );
+
+    if (userExists) {
+      //proses pengembalian data ke signIn.js controller
+      return {
+        success: true,
+        username,
+      };
+    } else {
+      return {
+        success: false,
+        message: "Data Tidak Ditemukan",
+      };
+    }
+  }
+
   getUsers() {
     return JSON.parse(localStorage.getItem("users")) || [];
   }
